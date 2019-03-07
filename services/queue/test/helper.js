@@ -463,13 +463,6 @@ exports.withPollingServices = (mock, skipping) => {
     };
   });
 
-  teardown(async function() {
-    if (svc) {
-      await svc.terminate();
-      svc = null;
-    }
-  });
-
   suiteTeardown(async function() {
     helper.startPollingService = null;
   });
