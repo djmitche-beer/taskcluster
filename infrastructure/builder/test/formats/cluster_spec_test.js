@@ -1,4 +1,3 @@
-const util = require('util');
 const path = require('path');
 const assume = require('assume');
 const {ClusterSpec} = require('../../src/formats/cluster-spec');

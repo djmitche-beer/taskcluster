@@ -1,9 +1,7 @@
-const fs = require('fs');
 const util = require('util');
 const path = require('path');
 const temporary = require('temporary');
 const rimraf = util.promisify(require('rimraf'));
-const assume = require('assume');
 const {ClusterSpec} = require('../../src/formats/cluster-spec');
 const {TerraformJson} = require('../../src/formats/tf-json');
 
