@@ -3,7 +3,6 @@ const path = require('path');
 const temporary = require('temporary');
 const rimraf = util.promisify(require('rimraf'));
 const {ClusterSpec} = require('../../src/formats/cluster-spec');
-const {TerraformJson} = require('../../src/formats/tf-json');
 
 suite('TerraformJson', function() {
   let tempDir;
@@ -21,7 +20,7 @@ suite('TerraformJson', function() {
   });
 
   test('load cluster spec from directory', function() {
-    const cs = new ClusterSpec(path.join(__dirname, 'example'));
-    const filename = path.join(makeTempDir(), 'out.tf.json');
+    new ClusterSpec(path.join(__dirname, 'example'));
+    path.join(makeTempDir(), 'out.tf.json');
   });
 });

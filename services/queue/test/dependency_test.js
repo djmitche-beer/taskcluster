@@ -42,7 +42,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     }, taskDef());
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA and taskB');
     let r1 = await helper.queue.createTask(taskIdA, taskA);
@@ -115,7 +115,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     let taskE = _.cloneDeep(taskB);
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA');
     await helper.queue.createTask(taskIdA, taskA);
@@ -199,7 +199,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     }, taskDef());
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA, taskB, taskC');
     let r1 = await helper.queue.createTask(taskIdA, taskA);
@@ -344,7 +344,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     }, taskDef());
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA and taskB');
     let r1 = await helper.queue.createTask(taskIdA, taskA);
@@ -376,7 +376,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     }, taskDef());
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA and taskB');
     let r1 = await helper.queue.createTask(taskIdA, taskA);
@@ -405,7 +405,7 @@ helper.secrets.mockSuite(__filename, ['taskcluster', 'aws', 'azure'], function(m
     }, taskDef());
 
     // Start dependency-resolver
-    const dependencyResolver = await helper.startPollingService('dependency-resolver');
+    await helper.startPollingService('dependency-resolver');
 
     debug('### Create taskA and taskB');
     let r1 = await helper.queue.createTask(taskIdA, taskA);

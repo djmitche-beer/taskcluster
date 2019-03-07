@@ -73,9 +73,6 @@ helper.secrets.mockSuite('api_test.js', ['taskcluster'], function(mock, skipping
   const hookWithBindings = _.defaults({
     bindings: [{exchange: `exchanges/test/${unique}`, routingKeyPattern: 'amongst.rockets.wizards'}],
   }, hookWithHookIds);
-  const hookWithNewBindings = _.defaults({
-    bindings: [{exchange: `exchanges/test-new/${unique}`, routingKeyPattern: 'amongst.new.rockets.and.wizards'}],
-  }, hookWithHookIds);
 
   const appendLastFire = async ({hookGroupId, hookId, taskId, taskCreateTime, firedBy, result, error}) => {
     await helper.LastFire.create({
@@ -643,7 +640,7 @@ helper.secrets.mockSuite('api_test.js', ['taskcluster'], function(mock, skipping
       const r2 = await helper.hooks.resetTriggerToken('foo', 'bar');
       assume(r1).deep.not.equals(r2);
       const r3 = await helper.hooks.getTriggerToken('foo', 'bar');
-      assume(r2).deep.equals(r2);
+      assume(r2).deep.equals(r3);
     });
 
     test('fails for undefined hook', async () => {
